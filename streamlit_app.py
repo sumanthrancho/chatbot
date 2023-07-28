@@ -15,23 +15,43 @@ bot_responses = {
     
 }
 
+
+
+
 def get_response(user_input):
-    # ... (existing get_response function code)
+  user_words = User_input.split()   
+  Matches = {}
 
-    if maxx < 10:
-        response = "Bot: I am sorry but I'm not able to understand: " + str(user_input)
-    else:
-        response = "Bot: " + correct_response
+  for response in bot_responses:
+    count = 0
+    for word in bot_responses[response]:   
+      if word in user_words:
+        count = count+1                         
 
-    st.write(response)
-    st.write(Matches)
+    percentage_match = (count / len(bot_responses[response])) * 100    
+
+    Matches[response] = percentage_match
+
+  maxx = 0
+  for keys in Matches:
+    if Matches[keys] > maxx:    
+      maxx = Matches[keys]    
+      Correct_response = keys
+
+  if maxx < 10:
+      response = "Bot: I am sorry but I'm not able to understand: " + str(user_input)
+  else:
+      response = "Bot: " + correct_response
+
+  st.write(response)
+  st.write(Matches)
 
 def main():
     st.sidebar.title("Chatbot")
-    st.sidebar.write("Hello! I am your Service manager bot. How can I help you?")
+    st.write("Bot : Hello! I am your Service manager bot. How can I help you?")  
 
     user_input = st.text_input("You:", "")
-
+    
     if user_input:
         user_input = user_input.lower()
         if user_input in ["bye", "goodbye", "takecare"]:
