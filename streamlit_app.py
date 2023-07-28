@@ -46,20 +46,20 @@ def get_response():
   st.write(response)
   st.write(Matches)
 
-def main():
-    st.sidebar.title("Chatbot")
-    st.write("Bot : Hello! I am your Service manager bot. How can I help you?")  
-    User_input = st.text_input("You : ")
-    while True:
-      
-      User_input=User_input.lower()  
 
-      if(User_input == "bye" or User_input=='goodbye' or User_input == 'takecare'):
-        st.error("Bot : Goodbye, Have a nice day. ")
-        break
-      if(User_input):
-        get_response()
-        User_input = st.text_input("You : ")
+st.sidebar.title("Chatbot")
+st.write("Bot : Hello! I am your Service manager bot. How can I help you?")  
+User_input = st.text_input("You : ")
+while True:
+  
+  User_input=User_input.lower()  
+
+  if(User_input == "bye" or User_input=='goodbye' or User_input == 'takecare'):
+    st.error("Bot : Goodbye, Have a nice day. ")
+    break
+  if(User_input):
+    get_response()
+    User_input = st.text_input("You : ")
 
 
     # user_input = st.text_input("You:", "")
@@ -71,5 +71,3 @@ def main():
     #     else:
     #         get_response(user_input)
 
-if __name__ == "__main__":
-    main()
