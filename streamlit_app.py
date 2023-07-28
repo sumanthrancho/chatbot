@@ -49,16 +49,17 @@ def get_response(user_input):
 def main():
     st.sidebar.title("Chatbot")
     st.write("Bot : Hello! I am your Service manager bot. How can I help you?")  
-
+    User_input = st.text_input("You : ")
     while True:
-      User_input = st.text_input("You : ")
+      
       User_input=User_input.lower()  
 
       if(User_input == "bye" or User_input=='goodbye' or User_input == 'takecare'):
         st.error("Bot : Goodbye, Have a nice day. ")
         break
-      else:
+      if(User_input):
         get_response()
+        User_input = st.text_input("You : ")
 
 
     # user_input = st.text_input("You:", "")
