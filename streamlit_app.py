@@ -18,7 +18,7 @@ bot_responses = {
 
 
 
-def get_response(user_input):
+def get_response():
   user_words = User_input.split()   
   Matches = {}
 
