@@ -1,4 +1,5 @@
-                    
+# !pip install streamlit
+import streamlit as st
 bot_responses = {
                   "Good evening" : ['good','evening'],            
                   "Good Morning ! " : ["good", "morning"],        
