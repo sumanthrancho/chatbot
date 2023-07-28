@@ -37,14 +37,13 @@ def get_response():
     if Matches[keys] > maxx:    
       maxx = Matches[keys]    
       Correct_response = keys
-
   if maxx < 10:
-      response = "Bot: I am sorry but I'm not able to understand: " + str(user_input)
-  else:
-      response = "Bot: " + correct_response
+    print("Bot : I am sorry but I'm not able to understand :   "+str(User_input))
+    print(Matches)
 
-  st.write(response)
-  st.write(Matches)
+  else:
+    print("Bot : ", Correct_response)
+    print(Matches)
 
 
 st.sidebar.title("Chatbot")
