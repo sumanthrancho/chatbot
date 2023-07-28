@@ -50,14 +50,25 @@ def main():
     st.sidebar.title("Chatbot")
     st.write("Bot : Hello! I am your Service manager bot. How can I help you?")  
 
-    user_input = st.text_input("You:", "")
-    
-    if user_input:
-        user_input = user_input.lower()
-        if user_input in ["bye", "goodbye", "takecare"]:
-            st.write("Bot: Goodbye, Have a nice day.")
-        else:
-            get_response(user_input)
+    while True:
+      User_input = st.text_input("You : ")
+      User_input=User_input.lower()  
+
+      if(User_input == "bye" or User_input=='goodbye' or User_input == 'takecare'):
+        st.error("Bot : Goodbye, Have a nice day. ")
+        break
+      else:
+        get_response()
+
+
+    # user_input = st.text_input("You:", "")
+
+    # if user_input:
+    #     user_input = user_input.lower()
+    #     if user_input in ["bye", "goodbye", "takecare"]:
+    #         st.write("Bot: Goodbye, Have a nice day.")
+    #     else:
+    #         get_response(user_input)
 
 if __name__ == "__main__":
     main()
