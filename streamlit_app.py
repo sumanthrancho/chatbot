@@ -50,7 +50,7 @@ st.sidebar.title("Chatbot")
 st.write("Bot : Hello! I am your Service manager bot. How can I help you?")  
 User_input = st.text_input("You : ")
 while True:
-  if(st.submit('⚡')):
+  if(st.button('⚡')):
       User_input=User_input.lower()  
     
       if(User_input == "bye" or User_input=='goodbye' or User_input == 'takecare'):
