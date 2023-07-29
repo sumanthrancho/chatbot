@@ -38,8 +38,8 @@ def get_response():
       maxx = Matches[keys]    
       Correct_response = keys
   if maxx < 10:
-    print("Bot : I am sorry but I'm not able to understand :   "+str(User_input))
-    print(Matches)
+    st.write("Bot : I am sorry but I'm not able to understand :   "+str(User_input))
+    st.wrtte(Matches)
 
   else:
     print("Bot : ", Correct_response)
@@ -50,15 +50,15 @@ st.sidebar.title("Chatbot")
 st.write("Bot : Hello! I am your Service manager bot. How can I help you?")  
 User_input = st.text_input("You : ")
 while True:
-  
-  User_input=User_input.lower()  
-
-  if(User_input == "bye" or User_input=='goodbye' or User_input == 'takecare'):
-    st.error("Bot : Goodbye, Have a nice day. ")
-    break
-  if(User_input):
-    get_response()
-    User_input = st.text_input("You : ")
+  if(st.submit('⚡')):
+      User_input=User_input.lower()  
+    
+      if(User_input == "bye" or User_input=='goodbye' or User_input == 'takecare'):
+        st.error("Bot : Goodbye, Have a nice day. ")
+        break
+      if(str(User_input)):
+        get_response()
+        User_input = st.text_input("You : ")
 
 
     # user_input = st.text_input("You:", "")
